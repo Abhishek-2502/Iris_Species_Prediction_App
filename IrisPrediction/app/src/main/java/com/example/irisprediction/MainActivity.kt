@@ -33,11 +33,26 @@ class MainActivity : AppCompatActivity() {
             var ed4 : EditText = findViewById(R.id.editTextNumberDecimal4);
             var tv : TextView = findViewById(R.id.textView);
 
+            var v1=0.0f;
+            var v2=0.0f;
+            var v3=0.0f;
+            var v4=0.0f;
 
-            var v1 : Float = ed1.text.toString().toFloat();
-            var v2 : Float = ed2.text.toString().toFloat();
-            var v3 : Float = ed3.text.toString().toFloat();
-            var v4 : Float = ed4.text.toString().toFloat();
+            try{
+                v1 = ed1.text.toString().toFloat();
+                v2 = ed2.text.toString().toFloat();
+                v3 = ed3.text.toString().toFloat();
+                v4 = ed4.text.toString().toFloat();
+            }catch(e : Exception){
+                tv.setText("Enter Some Input")
+                return@OnClickListener
+            }
+
+
+            if(v1<=0 || v2<=0 || v3<=0 || v4<=0 ){
+                tv.setText("Input Cannot be 0 or less than 0")
+                return@OnClickListener
+            }
 
             val model = Iris.newInstance(this)
 
