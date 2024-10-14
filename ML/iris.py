@@ -7,8 +7,7 @@ from tensorflow.keras.layers import Dense
 from tensorflow.keras.models import Sequential
 
 # Load dataset
-df = pd.read_csv('D:/Docs/Abhi/SIT/CSE/Android_Dev/Projects and Practice/Java/Main/Sudoku_Solver_App/ML/IrisTest/Iris.csv')
-
+df = pd.read_csv('D:/Docs/Abhi/SIT/CSE/Android_Dev/Kotlin Practice and Project/PracticeApps/Iris_Species_Prediction_App/ML/Iris.csv')
 # Features and labels
 X = df.iloc[:, 1:5].values  # Exclude 'Id'
 y = df.iloc[:, 5].values  # 'Species' column
